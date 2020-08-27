@@ -12,7 +12,7 @@ export class Yo extends BaseEntity {
 	@PrimaryGeneratedColumn()
 	id: number;
 
-	@Column({type: "number"})
+	@Column({type: "int"})
 	exclamations: number;
 
 	@CreateDateColumn()
