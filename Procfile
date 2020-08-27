@@ -1,1 +1,1 @@
-web: node yo-typeorm-heroku-server/dist/index.js
+web: node dist/index.js
