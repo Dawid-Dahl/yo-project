@@ -8,9 +8,11 @@ yoRouter.get("/get-all", async (req, res) => {
 	try {
 		const yoRepo = getConnection(process.env.NODE_ENV).getRepository(Yo);
 
-		const queryResult = yoRepo.find();
+		const queryResult = await yoRepo.find();
 
-		res.status(200).send(queryResult);
+		console.log("RESULT: ", queryResult);
+
+		res.status(200).json(JSON.stringify(queryResult));
 	} catch (e) {
 		console.log(e);
 	}
