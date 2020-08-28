@@ -7,7 +7,7 @@ const srcConfig = [
 		username: process.env.DB_USER,
 		password: process.env.DB_PASSWORD,
 		database: process.env.DB_NAME,
-		synchronize: false,
+		synchronize: true,
 		logging: true,
 		entities: ["src/db/entities/**/*.ts"],
 		migrations: ["src/db/migrations/**/*.ts"],
