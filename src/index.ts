@@ -29,6 +29,10 @@ import {createConnection, getConnectionOptions} from "typeorm";
 
 			app.use("/api", apiRouter);
 
+			app.get("/", (req, res) => {
+				res.send("<h1>Yo Router API.</h1>");
+			});
+
 			app.use(errorhandler());
 
 			app.listen(PORT, () => console.log(`Server now listening at port: ${PORT}`));
