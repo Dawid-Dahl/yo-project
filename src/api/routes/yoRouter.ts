@@ -4,6 +4,18 @@ import {Yo} from "../../db/entities/Yo";
 
 const yoRouter = express.Router();
 
+yoRouter.get("/get-all", async (req, res) => {
+	try {
+		const yoRepo = getConnection(process.env.NODE_ENV).getRepository(Yo);
+
+		const queryResult = yoRepo.find();
+
+		res.status(200).send(queryResult);
+	} catch (e) {
+		console.log(e);
+	}
+});
+
 yoRouter.post("/post", async (req, res) => {
 	try {
 		const {exclamations} = req.body;
