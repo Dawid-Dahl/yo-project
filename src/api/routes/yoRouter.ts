@@ -10,8 +10,6 @@ yoRouter.get("/get-all", async (req, res) => {
 
 		const queryResult = await yoRepo.find();
 
-		console.log("RESULT: ", queryResult);
-
 		res.status(200).json(JSON.stringify(queryResult));
 	} catch (e) {
 		console.log(e);
