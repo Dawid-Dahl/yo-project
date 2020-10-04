@@ -18,13 +18,14 @@ yoRouter.get("/get-all", async (req, res) => {
 
 yoRouter.post("/post", async (req, res) => {
 	try {
-		const {exclamations} = req.body;
+		const {exclamations, mood} = req.body;
 
 		const yoRepo = getConnection(process.env.NODE_ENV).getRepository(Yo);
 
 		const yo = yoRepo.create();
 
 		yo.exclamations = exclamations || 0;
+		yo.mood = mood || "null";
 
 		const insertresult = await yoRepo.save(yo);
 

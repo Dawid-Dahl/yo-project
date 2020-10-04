@@ -15,6 +15,9 @@ export class Yo extends BaseEntity {
 	@Column({type: "int"})
 	exclamations: number;
 
+	@Column({type: "varchar"})
+	mood: string;
+
 	@CreateDateColumn()
 	createdAt: Date;
 
